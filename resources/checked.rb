@@ -4,10 +4,10 @@ property :scripts_directory, String
 property :application_version, String
 
 recipe do 
-	install_directory = node['database-upgrader']['install_directory']
+	install_directory = node['database_upgrader']['install_directory']
 	executable_path = "#{install_directory}/DatabaseUpgrader.exe"
 
-	install_directory = node['database-upgrader']['install_directory']
+	install_directory = node['database_upgrader']['install_directory']
 	connection_string_arg = "\"-c#{connection_string}\""
 	scripts_directory_arg = "\"-d#{scripts_directory}\""
 

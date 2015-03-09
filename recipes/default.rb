@@ -8,9 +8,9 @@
 #
 
 database_upgrader_name = "DatabaseUpgrader.zip" 
-cached_database_upgrader = node['database-upgrader']['cache_archive']
+cached_database_upgrader = node['database_upgrader']['cache_archive']
 
-directory node['database-upgrader']['cache_path']
+directory node['database_upgrader']['cache_path']
 
 cookbook_file database_upgrader_name do
 	path cached_database_upgrader
@@ -18,18 +18,8 @@ cookbook_file database_upgrader_name do
 end
 
 windows_zipfile 'unzip_database_upgrader' do
-	path node['database-upgrader']['install_directory']
+	path node['database_upgrader']['install_directory']
 	source cached_database_upgrader
 	overwrite true
 	action :nothing
-end
-
-connection_string = 'Server=(local);Database=test;Integrated Security=SSPI'
-scripts_directory = 'C:\\temp\\scripts'
-application_version = '1.2.3.4'
-
-database_upgrader_checked "make sure database is up to date" do
-	connection_string connection_string
-	scripts_directory scripts_directory
-	application_version application_version
 end
