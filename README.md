@@ -1,6 +1,6 @@
 # database-upgrader-cookbook
 
-Manages database schema updates by persisting what schema updates occur on the database in a Version table.
+Manages database schema updates by persisting what schema updates occur on the database in a Version table. See https://github.com/mhedgpeth/DatabaseUpgrader for more information on how the utility works.
 
 ## Supported Platforms
 
